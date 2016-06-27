@@ -2,7 +2,7 @@
 "
 " Referenced here: http://vimuniversity.com/samples/your-first-vimrc-should-be-nearly-empty
 "
-" Original Author:	     Bram Moolenaar <Bram@vim.org>
+"  Original Author:	     Bram Moolenaar <Bram@vim.org>
 " Made more minimal by:  Ben Orenstein
 " Modified by :          Ben McCormick
 " Last change:	         2014 June 8
@@ -54,8 +54,7 @@ set linespace=4
 autocmd BufWritePre * :%s/\s\+$//e
 
 "Cancel search with Escape <CAPSLOCK>
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
-
+"nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 ""Set indentation colors""
 let g:indent_guides_auto_colors=0
@@ -64,8 +63,8 @@ let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_guide_size=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=242
-""""" Bundles using Vundle """""
 
+""""" Bundles using Vundle """""
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
@@ -89,3 +88,11 @@ vmap <up> <nop>
 vmap <down> <nop>
 vmap <left> <nop>
 vmap <right> <nop>
+"""" insert  mode """"
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+"""" additional commands """"
+set mouse=a
