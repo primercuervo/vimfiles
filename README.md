@@ -22,18 +22,18 @@ I took some ideas from mbr0wn and dkozel for this custom vim configuration.
 * **Cool** Theme for Airline, provided at the vim-airline-themes plugin
 
 ## Installation ##
-If you have already a vim setup, back it up:
+If you have already a vim setup you can either back it up or completely delete it. To back it up:
 
     mv .vim .vim.bak
     mv .vimrc .vimrc.bak
 
-Run the installation script (Thanks to Derek for this idea)
+Or delete your setup by running:
 
-    sh .vim/install.sh
+    rm -rf .vimrc .vim
 
 Clone this repository:
 
-    git clone https://github.com/primercuervo/vimfiles
+    git clone https://github.com/primercuervo/vimfiles .vim
 
 Create a symbolic link for the .vimrc
 

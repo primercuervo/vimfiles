@@ -47,7 +47,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=242
 
 """"" Bundles using Vundle """""
-set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 "let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
