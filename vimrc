@@ -1,5 +1,5 @@
 "  Original Author:	     Nicolas Cuervo
-"  Last change:	         30 - June - 2016
+"  Last change:	         01 - July - 2016
 "
 "  For installation steps read the README.md at my GitHub
 "  www.github.com/primercuervo
@@ -45,7 +45,15 @@ let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_guide_size=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=242
-
+"" Airline Configuration ""
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline_theme = 'cool'
 """"" Bundles using Vundle """""
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
@@ -64,18 +72,9 @@ nmap <F3> :TagbarToggle<CR>
 imap <F3> <ESC>:TagbarToggle<CR>
 "Minibuffer Explorer Toggle
 map <C-F12> :MBEToggle<cr>
-
-
-"" Airline Configuration ""
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline_theme = 'cool'
-
+"IndentGuidesToggle
+nmap <F4> :IndentGuidesToggle<cr>
+imap <F4> <ESC>:IndentGuidesToggle<cr>
 """" Normal mode """"
 nmap <up> <nop>
 nmap <down> <nop>
@@ -95,7 +94,8 @@ imap <right> <nop>
 " ctrl-tab through tabs
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
-
+"Map colon to space bar
+nmap <Space> :
 " tab through bufs
 map <Tab> :bnext<Enter>
 map <S-Tab> :bprev<Enter>

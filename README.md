@@ -50,11 +50,22 @@ And thanks to the magic of Vundle, you're all set!
 * Leader key -> map ,s :source ~/.vimrc
 * `F2` -> Toggle Nerdtree
 * `F3` -> Toogle TagBar
+* `F4` -> Toogle Indent Guides
 * `C-F12` -> Minibuffer Explorer Toggle
 * `C-left` -> Previous Tab
 * `C-right` -> Next Tab
 * `S-Tab` -> Previous Buffer
 * `Tab` -> Next Buffer
+* `Space bar` -> Does colon for faster command-ing
 
 **I force myself to use the homeline navigation by desabling the arrow keys**
 
+Also consider maping <ESC> to <CAPSLOCK> key (I personaly never use capslock, and even rather to press shift while writing for caps.
+This has to be done on filesystem, though. I use currently ubuntu and with this simple command:
+
+    setxkbmap -option caps:swapescape
+
+you can swap the capslock and the ESC key for good.
+
+
+Enjoy!
