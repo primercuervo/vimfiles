@@ -1,5 +1,5 @@
 "  Original Author:	     Nicolas Cuervo
-"  Last change:	         26 - June - 2016
+"  Last change:	         30 - June - 2016
 "
 "  For installation steps read the README.md at my GitHub
 "  www.github.com/primercuervo
