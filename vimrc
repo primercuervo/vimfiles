@@ -25,8 +25,8 @@ let mapleader=","
 " Allow hidden buffers, don't limit to 1 file per window/split
 set hidden
 """"" Set color theme """""
-set t_Co=16
-colorscheme wombat256mod
+set t_Co=256
+colorscheme miko
 """""Intentation"""""
 set nowrap      " nowrap displays longlines in only one line.
 set expandtab   " Expandtab converts tabs into
@@ -74,7 +74,7 @@ endif
 let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
-let g:airline_theme = 'wombat'
+let g:airline_theme = 'cool'
 
 """" Normal mode """"
 nmap <up> <nop>
