@@ -65,7 +65,7 @@ This has to be done on filesystem, though. I use currently ubuntu and with this 
 
     setxkbmap -option caps:swapescape
 
-you can swap the capslock and the ESC key for good.
+you can swap the capslock and the ESC key for one session, I think. If you like it, then you can find a way to do it for good (with xmodmap or gnome-tweaktool, for example) Find the option that suits you and your OS best.
 
 
 Enjoy!
