@@ -60,7 +60,7 @@ And thanks to the magic of Vundle, you're all set!
 
 **I force myself to use the homeline navigation by desabling the arrow keys**
 
-Also consider maping <ESC> to <CAPSLOCK> key (I personaly never use capslock, and even rather to press shift while writing for caps.
+Also consider maping <ESC> to <CAPSLOCK> key (I personaly never use capslock, and even rather to press shift while writing for caps.)
 This has to be done on filesystem, though. I use currently ubuntu and with this simple command:
 
     setxkbmap -option caps:swapescape
