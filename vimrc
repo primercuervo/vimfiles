@@ -19,7 +19,7 @@ syntax on
 filetype plugin indent on
 " Set linenumber and a couple of style checkers
 set number
-set colorcolumn=90
+set colorcolumn=80
 " Sets leaderkey to comma
 let mapleader=","
 " Allow hidden buffers, don't limit to 1 file per window/split
@@ -27,7 +27,7 @@ set hidden
 """"" Set color theme """""
 set t_Co=256
 colorscheme miko
-"""""Intentation"""""
+"""""Indentation and Config"""""
 set nowrap      " nowrap displays longlines in only one line.
 set expandtab   " Expandtab converts tabs into
 set autoindent  " Autoindent copies the indent of last line.
@@ -35,7 +35,24 @@ set smartindent " Automatically inserts one level of indent in certain cases.
 set tabstop=4
 set shiftwidth=4
 set linespace=4
-
+"" Less lag by needing less processing
+set lazyredraw
+set ttyfast
+"
+set relativenumber
+"if your search is lowercase, it wont be case sensitive. If some of the chars
+"are uppercase, it WILL be case sensitive
+set ignorecase
+set smartcase
+"" search-highlight, even during writing
+set incsearch
+set showmatch
+set hlsearch
+"clean the highlightning with leaderspace after search is finished
+nnoremap <leader><space> :noh<cr>
+"" Sets an undofile that allows you to undo changes even if you closed the
+"" file. Use carefully
+set undofile
 "Remove whitespaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 ""Set indentation colors""
