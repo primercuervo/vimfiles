@@ -21,6 +21,8 @@ I took some ideas from mbr0wn and dkozel for this custom vim configuration.
 * [Miko] (https://github.com/vim-scripts/miko) Color theme. (Sorry, (not sorry) too colorful) But totally readable!
 * **Cool** Theme for Airline, provided at the vim-airline-themes plugin
 
+For airline it is necessary to configure the powerline fonts. I did it following this guidelines: https://powerline.readthedocs.io/en/latest/installation/linux.html#font-installation
+
 ## Installation ##
 If you have already a vim setup you can either back it up or completely delete it. To back it up:
 
