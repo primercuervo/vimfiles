@@ -77,6 +77,15 @@ call vundle#rc()
 "let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 source ~/.vim/vimrc.bundles
+"""""Syntastic Settings """""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 "Show matching parenthesis
 set showmatch
 """"" Key Mappings """""
@@ -92,21 +101,6 @@ map <C-F12> :MBEToggle<cr>
 "IndentGuidesToggle
 nmap <F4> :IndentGuidesToggle<cr>
 imap <F4> <ESC>:IndentGuidesToggle<cr>
-"""" Normal mode """"
-nmap <up> <nop>
-nmap <down> <nop>
-nmap <left> <nop>
-nmap <right> <nop>
-"""" visual  mode """"
-vmap <up> <nop>
-vmap <down> <nop>
-vmap <left> <nop>
-vmap <right> <nop>
-"""" insert  mode """"
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
 """" additional commands """"
 " ctrl-tab through tabs
 nnoremap <C-Left> :tabprevious<CR>
@@ -118,3 +112,4 @@ map <Tab> :bnext<Enter>
 map <S-Tab> :bprev<Enter>
 " Allow mouse
 set mouse=a
+set tw=85
