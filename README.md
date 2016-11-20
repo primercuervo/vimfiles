@@ -15,6 +15,7 @@ I took some ideas from mbr0wn and dkozel for this custom vim configuration.
 * [Tagbar] (https://github.com/majutsushi/tagbar) - Displays tags (such as python classes - reason why I use this) in a pane.
 * [MiniBuffer Explorer] (https://github.com/fholgado/minibufexpl.vim) - Shows the open buffers in a line.
 * [CtrlSpace] (https://github.com/vim-ctrlspace/vim-ctrlspace) - Amazing space controller with file, buffers and tab list/customization. Still learning how to use it. May replace Nerdtree and MinBuffExplorer from this list
+* [YouCompleteMe] (https://github.com/Valloric/YouCompleteMe) - Autocomplete tools.
 
 ## Themes ##
 ![Alt text](screenshot/screenshot.png?raw=true "This is how it looks like")
@@ -78,32 +79,34 @@ This section means that there are a couple of steps that I have not yet automate
 However they are rather simple:
 * C-family autocompletion with YCM: Go to ~/.vim/bundle/YouCompleteMe and there type:
 
-    ./install.py --clang-completer
+        $ ./install.py --clang-completer
 
 * Setup external fonts for Airline: Although I already said it above, I rather put the
 specific steps that I followed here:
 
-    wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+        $ wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+    
+        $ wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
 
-    wget
-    https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+    check the valid Xfont pah with the command:
 
-check the valid Xfont pah with the command:
+        $ xset q
 
-    xset q
+    in my case it is /usr/share/fonts/X11/misc. Then move the symbol file there:
+    
+         $ [sudo] mv PowerlineSymbols.oft /usr/share/fonts/X11/misc/
 
-in my case it is /usr/share/fonts/X11/misc. Then move the symbol file there:
-    [sudo] mv PowerlineSymbols.oft /usr/share/fonts/X11/misc/
+    Then update the font cache for the path the font was moved to:
+    
+        $ [sudo] fc-cache -vf /usr/share/fonts/x11/misc/
 
-Then update the font cache for the path the font was moved to:
-    [sudo] fc-cache -vf /usr/share/fonts/x11/misc/
-
-Afterwards isntlal the fontconfig file. It could be installed at either
+    Afterwards isntlal the fontconfig file. It could be installed at either
 ~/.config/fontconfig/conf.d/ (for newer versions) or at ~/.fonts.conf.d/ (for older
 versions). In my case, I moved it to /etc/fonts/conf.d/:
-    [sudo] mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+    
+        $ [sudo] mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 
-After that, my airline bar had the necessary symbols
+    After that, my airline bar had the necessary symbols
 
 
 
