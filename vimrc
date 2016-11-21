@@ -115,4 +115,4 @@ map <Tab> :bnext<Enter>
 map <S-Tab> :bprev<Enter>
 " Allow mouse
 set mouse=a
-set tw=85
+"set tw=85
