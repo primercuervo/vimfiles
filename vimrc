@@ -48,6 +48,9 @@ set smartcase
 set incsearch
 set showmatch
 set hlsearch
+"" Set autocomplete bash-like
+set wildmode=longest,list,full
+set wildmenu
 "clean the highlightning with leaderspace after search is finished
 nnoremap <leader><space> :noh<cr>
 "" Sets an undofile that allows you to undo changes even if you closed the
