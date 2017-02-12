@@ -104,6 +104,9 @@ map <C-F12> :MBEToggle<cr>
 "IndentGuidesToggle
 nmap <F4> :IndentGuidesToggle<cr>
 imap <F4> <ESC>:IndentGuidesToggle<cr>
+"Vertical split size
+nmap + :vertical resize +5<CR>
+nmap = :vertical resize -5<CR>
 """" additional commands """"
 " ctrl-tab through tabs
 nnoremap <C-Left> :tabprevious<CR>
