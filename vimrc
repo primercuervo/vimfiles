@@ -86,9 +86,13 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <F5> :SyntasticCheck<CR>
+nmap J :lnext<CR>
+nmap K :lprevious<CR>
 "Show matching parenthesis
 set showmatch
 """"" Key Mappings """""
