@@ -51,6 +51,38 @@ set hlsearch
 "" Set autocomplete bash-like
 set wildmode=longest,list,full
 set wildmenu
+
+set encoding=utf-8
+"" PEP8 Indentation
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+let python_highlight_all=1
+"" Verilog Indentation
+au BufNewFile,BufRead *.v
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+"" Enable Folding
+set foldmethod=indent
+set foldlevel=99
+let g:SimplyFold_dpyocstring_preview=1
+
+"" YCM settings
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_server_use_vim_stdout = 0
+let g:ycm_server_keep_logfiles = 1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 "clean the highlightning with leaderspace after search is finished
 nnoremap <leader><space> :noh<cr>
 "" Sets an undofile that allows you to undo changes even if you closed the
