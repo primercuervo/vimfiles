@@ -36,7 +36,7 @@ set tabstop=4
 set shiftwidth=4
 set linespace=4
 "" Less lag by needing less processing
-
+set lazyredraw
 set ttyfast
 "
 set relativenumber
