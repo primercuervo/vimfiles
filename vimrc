@@ -36,7 +36,7 @@ set tabstop=4
 set shiftwidth=4
 set linespace=4
 "" Less lag by needing less processing
-set lazyredraw
+
 set ttyfast
 "
 set relativenumber
@@ -153,3 +153,11 @@ map <S-Tab> :bprev<Enter>
 " Allow mouse
 set mouse=a
 "set tw=85
+
+" Setting up templates
+if has("autocmd")
+    augroup templates
+        autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+        autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
+    augroup END
+endif
