@@ -1,5 +1,5 @@
 "  Original Author:	     Nicolas Cuervo
-"  Last change:	         01 - July - 2016
+"  Last modified: 2017 Apr 28
 "
 "  For installation steps read the README.md at my GitHub
 "  www.github.com/primercuervo
@@ -153,7 +153,6 @@ map <Tab> :bnext<Enter>
 map <S-Tab> :bprev<Enter>
 " Allow mouse
 set mouse=a
-"set tw=85
 
 " Setting up templates
 if has("autocmd")
@@ -163,3 +162,13 @@ if has("autocmd")
         autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
     augroup END
 endif
+autocmd BufWritePre,FileWritePre vimrc   ks|call LastMod()|'s
+fun LastMod()
+  if line("$") > 20
+    let l = 20
+  else
+    let l = line("$")
+  endif
+  exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " .
+  \ strftime("%Y %b %d")
+endfun
