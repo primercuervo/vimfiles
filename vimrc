@@ -32,7 +32,7 @@ set nowrap      " nowrap displays longlines in only one line.
 set expandtab   " Expandtab converts tabs into
 set autoindent  " Autoindent copies the indent of last line.
 set smartindent " Automatically inserts one level of indent in certain cases.
-set tabstop=4
+set tabstop=2
 set shiftwidth=4
 set linespace=4
 "" Less lag by needing less processing
@@ -146,6 +146,7 @@ nmap = :vertical resize -5<CR>
 " ctrl-tab through tabs
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
+inoremap # X<BS>#
 "Map colon to space bar
 nmap <Space> :
 " tab through bufs
