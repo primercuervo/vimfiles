@@ -173,3 +173,7 @@ fun LastMod()
   exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " .
   \ strftime("%Y %b %d")
 endfun
+
+" Add command for JSON pretty formatting
+" based on https://coderwall.com/p/faceag/format-json-in-vim
+com! FormatJSON %!python -m json.tool
