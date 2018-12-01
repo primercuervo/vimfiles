@@ -177,3 +177,8 @@ endfun
 " Add command for JSON pretty formatting
 " based on https://coderwall.com/p/faceag/format-json-in-vim
 com! FormatJSON %!python -m json.tool
+
+" FZF
+let g:fzf_command_prefix = 'Fzf'
+nmap <C-p> :FzfFiles<CR>
+nmap ; :FzfGFiles<CR>
