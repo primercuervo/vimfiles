@@ -33,8 +33,8 @@ set expandtab   " Expandtab converts tabs into
 set autoindent  " Autoindent copies the indent of last line.
 set smartindent " Automatically inserts one level of indent in certain cases.
 set tabstop=2
-set shiftwidth=4
-set linespace=4
+set shiftwidth=2
+set linespace=2
 "" Less lag by needing less processing
 set lazyredraw
 set ttyfast
@@ -80,6 +80,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_server_use_vim_stdout = 0
 let g:ycm_server_keep_logfiles = 1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <leader>f  :YcmCompleter FixIt<CR>
 
 "clean the highlightning with leaderspace after search is finished
 nnoremap <leader><space> :noh<cr>
@@ -92,9 +93,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 let g:indent_guides_auto_colors=0
 let g:indent_guides_start_level=2
 let g:indent_guides_enable_on_vim_startup = 0
-let g:indent_guides_guide_size=1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=242
+let g:indent_guides_guide_size=2
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=23
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=29
 "" Airline Configuration ""
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
@@ -181,4 +182,19 @@ com! FormatJSON %!python -m json.tool
 " FZF
 let g:fzf_command_prefix = 'Fzf'
 nmap <C-p> :FzfFiles<CR>
-nmap ; :FzfGFiles<CR>
+nmap ; :FzfGfiles<CR>
+
+
+" Auto closing chars
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+"clang-format
+map <C-K> :py3f /usr/share/clang/clang-format-6.0/clang-format.py<cr>
+imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-6.0/clang-format.py<cr>
+"function! Formatonsave()
+  "let l:formatdiff = 1
+  "py3f /usr/share/clang/clang-format-6.0/clang-format.py
+  ":echom "Hello"
+"endfunction
+"autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()
