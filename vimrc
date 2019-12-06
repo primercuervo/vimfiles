@@ -1,5 +1,5 @@
 "  Original Author:	     Nicolas Cuervo
-"  Last modified: 2017 Apr 28
+"  Last modified: 2019 Jul 25
 "
 "  For installation steps read the README.md at my GitHub
 "  www.github.com/primercuervo
@@ -33,8 +33,8 @@ set expandtab   " Expandtab converts tabs into
 set autoindent  " Autoindent copies the indent of last line.
 set smartindent " Automatically inserts one level of indent in certain cases.
 set tabstop=2
-set shiftwidth=2
-set linespace=2
+set shiftwidth=4
+set linespace=4
 "" Less lag by needing less processing
 set lazyredraw
 set ttyfast
@@ -79,23 +79,37 @@ let g:SimplyFold_dpyocstring_preview=1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_server_use_vim_stdout = 0
 let g:ycm_server_keep_logfiles = 1
+let g:ycm_use_clangd = 0
+let g:ycm_clangd_binary_path = "/usr/local/bin/clangd"
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <leader>f  :YcmCompleter FixIt<CR>
 
+"" vim-clang-format settings
+let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format = 0
+let g:clang_format#enable_fallback_style = 0
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 "clean the highlightning with leaderspace after search is finished
 nnoremap <leader><space> :noh<cr>
 "" Sets an undofile that allows you to undo changes even if you closed the
 "" file. Use carefully
 set undofile
+
+"" Set different directories for working files, so that they don't clutter
+"" my workspace
+set backupdir=.backup/,~/.backup/,/tmp//
+set directory=.swp/,~/.swp/,/tmp//
+set undodir=.undo/,~/.undo/,/tmp//
 "Remove whitespaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 ""Set indentation colors""
 let g:indent_guides_auto_colors=0
 let g:indent_guides_start_level=2
 let g:indent_guides_enable_on_vim_startup = 0
-let g:indent_guides_guide_size=2
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=23
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=29
+let g:indent_guides_guide_size=1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=242
 "" Airline Configuration ""
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
@@ -182,19 +196,17 @@ com! FormatJSON %!python -m json.tool
 " FZF
 let g:fzf_command_prefix = 'Fzf'
 nmap <C-p> :FzfFiles<CR>
-nmap ; :FzfGfiles<CR>
+nmap ; :FzfGFiles<CR>
 
 
-" Auto closing chars
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+" Enhanced highlighting cpp"
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_template_highlight = 1
 
-"clang-format
-map <C-K> :py3f /usr/share/clang/clang-format-8/clang-format.py<cr>
-imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-8/clang-format.py<cr>
-"function! Formatonsave()
-  "let l:formatdiff = 1
-  "py3f /usr/share/clang/clang-format-6.0/clang-format.py
-  ":echom "Hello"
-"endfunction
-"autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()
+" settings for grip (GitHub flavored markdown)
+let vim_markdown_preview_github=1
+let vim_markdown_preview_toggle=1
+let vim_markdown_preview_temp_file=0
+let vim_markdown_preview_browser='Mozilla Firefox'
