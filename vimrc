@@ -1,5 +1,5 @@
 "  Original Author:	     Nicolas Cuervo
-"  Last modified: 2019 Jul 25
+"  Last modified: 2020 Feb 08
 "
 "  For installation steps read the README.md at my GitHub
 "  www.github.com/primercuervo
@@ -33,8 +33,8 @@ set expandtab   " Expandtab converts tabs into
 set autoindent  " Autoindent copies the indent of last line.
 set smartindent " Automatically inserts one level of indent in certain cases.
 set tabstop=2
-set shiftwidth=4
-set linespace=4
+set shiftwidth=2
+set linespace=2
 "" Less lag by needing less processing
 set lazyredraw
 set ttyfast
@@ -210,3 +210,9 @@ let vim_markdown_preview_github=1
 let vim_markdown_preview_toggle=1
 let vim_markdown_preview_temp_file=0
 let vim_markdown_preview_browser='Mozilla Firefox'
+
+" Ultisnips configuration
+let g:UltiSnipsExpandTrigger="**"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
