@@ -214,3 +214,11 @@ set foldmethod=indent
 
 "" Markdown
 au BufRead,BufNewFile *.md setfiletype markdown
+
+" VimWiki
+let g:vimwiki_list = [ {'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.wiki'} ]
+let g:vimwiki_hl_headers = 1
+let g:vimwiki_hl_cb_checked = 1
+
+"au BufRead,BufNewFile *.wiki setfiletype vimwiki
+autocmd Filetype md,markdown,vimwiki inoremap <leader>now *<CR><Esc>!!date<CR>A*<Esc>kJxA<CR><CR>
