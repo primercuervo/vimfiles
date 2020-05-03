@@ -53,14 +53,15 @@ set wildmenu
 
 set encoding=utf-8
 "" PEP8 Indentation
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
+au BufNewFile,BufRead *.py setfiletype python
+:autocmd FileType python set tabstop=4 |
+:autocmd FileType python set softtabstop=4 |
+:autocmd FileType python set shiftwidth=4 |
+:autocmd FileType python set expandtab |
+:autocmd FileType python set autoindent |
+:autocmd FileType python set fileformat=unix
 let python_highlight_all=1
+
 "" Verilog Indentation
 au BufNewFile,BufRead *.v
     \ set tabstop=2 |
@@ -69,6 +70,7 @@ au BufNewFile,BufRead *.v
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
+
 "" Enable Folding
 set foldmethod=indent
 set foldlevel=99
