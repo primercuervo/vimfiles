@@ -162,15 +162,12 @@ imap <F4> <ESC>:IndentGuidesToggle<cr>
 nmap + :vertical resize +5<CR>
 nmap = :vertical resize -5<CR>
 """" additional commands """"
-" ctrl-tab through tabs
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
 inoremap # X<BS>#
 "Map colon to space bar
 nmap <Space> :
 " tab through bufs
-map <Tab> :bnext<Enter>
-map <S-Tab> :bprev<Enter>
+nnoremap <C-Left> :bprev<CR>
+nnoremap <C-Right> :bnext<CR>
 " Allow mouse
 set mouse=a
 
