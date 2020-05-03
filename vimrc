@@ -1,5 +1,4 @@
 "  Original Author:	     Nicolas Cuervo
-"  Last modified: 2020 Feb 08
 "
 "  For installation steps read the README.md at my GitHub
 "  www.github.com/primercuervo
@@ -178,16 +177,6 @@ if has("autocmd")
         autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
     augroup END
 endif
-autocmd BufWritePre,FileWritePre vimrc   ks|call LastMod()|'s
-fun LastMod()
-  if line("$") > 20
-    let l = 20
-  else
-    let l = line("$")
-  endif
-  exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " .
-  \ strftime("%Y %b %d")
-endfun
 
 " Add command for JSON pretty formatting
 " based on https://coderwall.com/p/faceag/format-json-in-vim
