@@ -189,21 +189,22 @@ let g:fzf_command_prefix = 'Fzf'
 nmap <C-p> :FzfFiles<CR>
 nmap ; :FzfGFiles<CR>
 
-
 " Enhanced highlighting cpp"
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
+" Ultisnips configuration
+let g:UltiSnipsExpandTrigger="**"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsListSnippets=""
+map <leader>u :UltiSnipsEdit<CR>
+
 " settings for grip (GitHub flavored markdown)
 let vim_markdown_preview_github=1
 let vim_markdown_preview_toggle=1
 let vim_markdown_preview_temp_file=0
 let vim_markdown_preview_browser='Mozilla Firefox'
-
-" Ultisnips configuration
-let g:UltiSnipsExpandTrigger="**"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
