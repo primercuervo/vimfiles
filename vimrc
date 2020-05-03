@@ -102,6 +102,9 @@ set undofile
 set backupdir=.backup/,~/.backup/,/tmp//
 set directory=.swp/,~/.swp/,/tmp//
 set undodir=.undo/,~/.undo/,/tmp//
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
 "Remove whitespaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 ""Set indentation colors""
