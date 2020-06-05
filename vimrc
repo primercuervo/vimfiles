@@ -185,7 +185,6 @@ endif
 com! FormatJSON %!python -m json.tool
 
 " FZF
-let g:fzf_command_prefix = 'Fzf'
 nmap <C-p> :FzfFiles<CR>
 nmap ; :FzfGFiles<CR>
 
