@@ -216,7 +216,17 @@ au BufRead,BufNewFile *.md setfiletype markdown
 au BufRead,BufNewFile *.wiki setfiletype vimwiki.markdown
 
 " VimWiki
-let g:vimwiki_list = [ {'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.wiki'} ]
+let g:vimwiki_list = [{
+  \ 'path': '~/vimwiki/',
+  \ 'path_html': '~/vimwiki_html/',
+  \ 'syntax': 'markdown',
+  \ 'ext': '.wiki',
+  \ 'template_path': '~/vimwiki/templates/',
+  \ 'custom_wiki2html': 'vimwiki_markdown',
+  \ 'html_filename_parameterization': 1,
+  \ 'template_default': 'index',
+  \ 'template_ext': '.html'}]
+
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
 
@@ -224,3 +234,4 @@ let g:vimwiki_hl_cb_checked = 1
 autocmd Filetype md,markdown,vimwiki inoremap <leader>now *<CR><Esc>!!date<CR>A*<Esc>kJxA<CR><CR>
 autocmd Filetype md,markdown,vimwiki inoremap <leader>today <C-r>=strftime('%F')<CR>
 autocmd Filetype md,markdown,vimwiki set wrap spell
+map <leader>todo :e ~/vimwiki/todo.wiki<CR>
