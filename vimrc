@@ -251,3 +251,16 @@ vnoremap <silent> # :<C-U>
 
 " Put visual selection to find and replace
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+function! VimwikiFindIncompleteTasks()
+  lvimgrep /- \[ \]/ %:p
+  lopen
+endfunction
+
+function! VimwikiFindAllIncompleteTasks()
+  VimwikiSearch /- \[ \]/
+  lopen
+endfunction
+
+nmap <Leader>wa :call VimwikiFindAllIncompleteTasks()<CR>
+nmap <Leader>wx :call VimwikiFindIncompleteTasks()<CR>
