@@ -14,6 +14,20 @@ snippet [
 [${1:text}](${2:address})
 endsnippet
 
+snippet img
+![${1:alt_text}](file:${2:path})
+endsnippet
+
+snippet la
+$$
+\\begin{equation}
+${1:latex_math}
+\\label{eq:${2:label}}
+\\end{equation}
+$$
+endsnippet
+
+
 snippet bbl "bookmark backlog template"
 ### ${1:title}
 * Author: ${2:author}
