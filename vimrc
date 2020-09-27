@@ -23,9 +23,6 @@ set colorcolumn=80
 let mapleader=","
 " Allow hidden buffers, don't limit to 1 file per window/split
 set hidden
-""""" Set color theme """""
-set t_Co=256
-colorscheme miko
 """""Indentation and Config"""""
 set nowrap      " nowrap displays longlines in only one line.
 set expandtab   " Expandtab converts tabs into
@@ -114,6 +111,29 @@ let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_guide_size=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=242
+""""" Bundles using Vundle """""
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+"let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+source ~/.vim/vimrc.bundles
+""""" Set color theme """""
+set t_Co=256
+set background=dark
+if &term =~ '256color'
+    set t_ut=
+endif
+if has('termguicolors')
+  set termguicolors
+endif
+let g:edge_style = 'aura'
+let g:edge_enable_italic = 1
+let g:edge_disable_italic_comment = 1
+colorscheme edge
+"" Set missing highlighting for Vimwiki links
+""" This is colorscheme specific - Remember this setting if colorscheme changes
+highlight Vimlinks guifg=#6cb6eb cterm=underline
+hi! link VimwikiLink Vimlinks
 "" Airline Configuration ""
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
@@ -122,13 +142,7 @@ endif
 let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
-let g:airline_theme = 'cool'
-""""" Bundles using Vundle """""
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
-"let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-source ~/.vim/vimrc.bundles
+let g:airline_theme = 'edge'
 """""Syntastic Settings """""
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
